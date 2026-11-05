@@ -28,7 +28,7 @@ for i in MP3_FILES:
         print(f"Output file {output_file.name} already exists. Skipping conversion.")
         continue
     print(f"Converting {i.name} to wav...")
-    command = ["ffmpeg", "-i", str(i), str(output_file)]
+    command = [FFMPEG_PATH, "-i", str(i), str(output_file)]
     try:
         subprocess.run(command, check=True, capture_output=True, text=True)
         print(f"Successfully converted {i.name} to {output_file.name}")
